@@ -240,6 +240,35 @@ creatCountryList();
 
 //SHOW/HIDE THE COUNTRY LIST NO CLICK EVENT
 change_country_btn.addEventListener('click', function(){
+    input.value = "";
+    resetCountryList();
     search_country_element.classList.toggle('hide');
     search_country_element.classList.add('fadeIn');
 });
+close_list_btn.addEventListener('click', function(){
+    search_country_element.classList.toggle('hide');
+});
+country_list_element.addEventListener('click', function(){
+    search_country_element.classList.toggle('hide');
+});
+
+//COUNTRY FILTER 
+// INPUT EVENT FIRES UP WHENEVER THE VALUE OF THE INPUT CHANGES
+input.addEventListener('input', function(){
+    let value = input.value.toUpperCase();
+    country_list.forEach(country => {
+        if(country.name.toLocaleUpperCase().startsWith(value)){
+           document.getElementById(country.name).classList.remove('hide');
+
+        }else{
+            document.getElementById(country.name).classList.add('hide');
+        }
+    })
+})
+
+//RESET COUNTRY LIST (SHOW ALL THE COUNTRIES)
+function resetCountryList() {
+    country_list.forEach(country => {
+        document.getElementById(country.name).classList.remove('hide');
+    })
+}
