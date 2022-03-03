@@ -222,10 +222,10 @@ function creatCountryList() {
 
         if (index % Math.ceil(num_countries / num_of_ul_lists) == 0) {
             ul_list_id = `list-${i}`;
-            console.log(i);
+            
             // console.log(ul_list_id);
             country_list_element.innerHTML += `<ul id='${ul_list_id}'>`;
-            console.log(ul_list_id);
+            ;
             i++;
         }
         document.getElementById(`${ul_list_id}`).innerHTML += `
