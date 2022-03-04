@@ -29,19 +29,6 @@ country_list.forEach((country) => {
 	}
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ---------------------------------------------- */
 /*                API URL AND KEY                 */
 /* ---------------------------------------------- */
@@ -86,6 +73,7 @@ function fetchData(country) {
 				return res.json();
 			})
 			.then((data) => {
+				
 				data.forEach((entry) => {
 					recovered_list.push(entry.Cases);
 				});
